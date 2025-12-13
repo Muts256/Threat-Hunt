@@ -810,41 +810,41 @@ During this threat hunting exercise on `azuki-fileserver01` and related endpoint
 4. **Command Execution and Lateral Movement:**  
    Suspicious commands, including `whoami.exe`, `ipconfig.exe`, `xcopy.exe`, and HTTP-based connections, were executed under the compromised account `fileadmin`, indicating reconnaissance and potential lateral movement (T1059, T1071).
 
-5. **Evidence Removal:**
+5. **Evidence Removal:**  
    File deletions targeting `.txt` files in user directories were observed, suggesting an attempt to remove artifacts and evade detection (T1070.004).
 
 # Recommendation
 
-   - *Harden and Monitor PowerShell Usage:*
-     PowerShell was used for stealthy execution (-NoProfile -WindowStyle Hidden) and persistence via a malicious script masquerading as a Windows binary.
+   1. *Harden and Monitor PowerShell Usage:*  
+   PowerShell was used for stealthy execution (-NoProfile -WindowStyle Hidden) and persistence via a malicious script masquerading as a Windows binary.
        - Enforce PowerShell Constrained Language Mode for non-admin users
        - Enable PowerShell Script Block Logging (Event ID 4104)
        - Monitor for suspicious flags: -NoP, -W Hidden, -EncodedCommand
        - Alert on PowerShell execution from non-standard locations e.g. C:\Windows\System32\svchost.ps1
 
-  - *Strengthen Persistence Detection and Controls:*
-      The attacker used registry Run keys (FileShareSync) to ensure execution at startup.
+  2. *Strengthen Persistence Detection and Controls:*  
+   The attacker used registry Run keys (FileShareSync) to ensure execution at startup.
       - Alert on new or modified Run / RunOnce registry keys
       - Baseline known-good autorun entries.
       - Block registry persistence creation by non-admin users
       - Regularly audit of HKLM\...\Run and HKCU\...\Run
 
-  - *Restrict Data Staging, Compression, and Exfiltration Tools:*
-      Data was staged, compressed using tar.exe, and exfiltrated via curl.exe to a public cloud service (file.io).
+  3. *Restrict Data Staging, Compression, and Exfiltration Tools:*  
+   Data was staged, compressed using tar.exe, and exfiltrated via curl.exe to a public cloud service (file.io).
       - Restrict or alert on: tar.exe, curl.exe, certutil.exe, xcopy.exe
       - Monitor non-standard compression paths e.g. C:\Windows\Logs\CBS
       - Block outbound connections to: Anonymous file-sharing services
       - Use Defender for Endpoint indicators to block known exfil domains
 
-  - *Protect Credentials and Monitor for Dump Artifacts:*
-      The presence of lsass.dmp strongly indicates credential dumping.
+  4. *Protect Credentials and Monitor for Dump Artifacts:*  
+  The presence of lsass.dmp strongly indicates credential dumping.
       - Enable LSASS protection - RunAsPPL
       - Disable local admin access where unnecessary
       - Alert on: Creation of .dmp files related to LSASS, Access to LSASS memory
       - Enforce Credential Guard where possible
  
-  - *Detect and Prevent Evidence Removal & Defense Evasion:*
-      Attackers deleted .txt files and PowerShell history to erase evidence.
+  5. *Detect and Prevent Evidence Removal & Defense Evasion:*  
+  Attackers deleted .txt files and PowerShell history to erase evidence.
       - Monitor file deletion events in user directories
       - Alert on: Deletion of shell history files, Cleanup shortly after suspicious activity
       - Retain endpoint logs centrally with tamper protection
