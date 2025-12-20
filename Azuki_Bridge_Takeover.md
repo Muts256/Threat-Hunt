@@ -52,7 +52,7 @@ DeviceLogonEvents
 
 Result:
 
-[image alt]()
+  ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B0.png)
 
 Question: Identify the source IP address for lateral movement to the admin PC?
 
@@ -75,7 +75,7 @@ DeviceLogonEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B1.png)
 
 Question: Identify the compromised account used for lateral movement?
 
@@ -99,7 +99,7 @@ DeviceLogonEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B1.png)
 
 Question: What is the target device name?
 
@@ -160,7 +160,7 @@ DeviceNetworkEvents
 
 Result: 
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B4.png)
 
 Question: What file hosting service was used to stage malware?
 
@@ -186,7 +186,7 @@ DeviceNetworkEvents
 
 Result 
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B5.png)
 
 Question: What command was used to download the malicious archive?
 
@@ -257,7 +257,7 @@ DeviceProcessEvents
 
 Result: 
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B6.png)
 
 Question: Identify the command used to extract the password-protected archive?
 
@@ -330,7 +330,7 @@ DeviceFileEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B7.png)
 
 Question: Identify the C2 beacon filename?
 
@@ -416,7 +416,7 @@ DeviceEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B8.png)
 
 Question: Identify the named pipe created by the C2 implant?
 
@@ -496,11 +496,11 @@ DeviceProcessEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B9.png)
 
 Decoded message using Cyberchef
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B9a.png)
 
 Question: What is the decoded Base64 command?
 
@@ -525,7 +525,7 @@ DeviceProcessEvents
 ```
 In the decoded message, an account was created
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B9a.png)
 
 Question: Identify the backdoor account name?
 
@@ -557,15 +557,15 @@ DeviceProcessEvents
 
 A Process was created
 
-[image alt]() 
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B11.png) 
 
 An encoded message was found in the process command line
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B11a.png)
 
 The message was decoded using CyberChef
 
-[image alt](B11b)
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B11b.png)
 
 Question: What is the decoded Base64 command for privilege escalation?
 
@@ -639,7 +639,8 @@ DeviceProcessEvents
 - Provides early indicators of lateral movement planning
 
 Result:
-[image alt]()
+
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B12.png)
 
 Question: What command was used to enumerate RDP sessions?
 
@@ -712,7 +713,7 @@ DeviceProcessEvents
 
 Result: 
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B13.png)
 
 Question: Identify the command used to enumerate domain trusts?
 
@@ -799,7 +800,7 @@ DeviceProcessEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B14.png)
 
 
 Question: What command was used to enumerate network connections?
@@ -886,7 +887,7 @@ The query used:
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B15a.png)
 
 
 Query 2:
@@ -929,7 +930,7 @@ DeviceProcessEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B15b.png)
 
 Question: What command was used to search for password databases?
 
@@ -1012,9 +1013,10 @@ DeviceProcessEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B16a.png)
 
-[image alt]()
+
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B16b.png)
 
 Question: Identify the discovered password file?
 
@@ -1119,9 +1121,10 @@ DeviceProcessEvents
 
 Result
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B17a.png)
 
-[image alt]()
+
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B17b.png)
 
 Question: Identify the data staging directory?
 
@@ -1145,7 +1148,7 @@ DeviceProcessEvents
 ```
 Result
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B18.png)
 
 Question: Identify the command used to copy banking documents?
 
@@ -1227,9 +1230,12 @@ DeviceFileEvents
 
 Results:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B19.png)
 
-[image alt]()
+
+
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B19a.png)
+
 
 Question: Identify the total number of archives created?
 
@@ -1311,7 +1317,6 @@ DeviceProcessEvents
 **Technique:** Living off the Land Binaries and Scripts  
 **Technique ID:** T1218  
 
-
 ### Data Source
 - Microsoft Defender for Endpoint
 - `DeviceProcessEvents`
@@ -1328,7 +1333,7 @@ DeviceProcessEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B20.png)
 
 Question: What command was used to download the credential theft tool?
 
@@ -1425,7 +1430,7 @@ DeviceProcessEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B21.png)
 
 Question: What command was used for browser credential theft?
 
@@ -1516,7 +1521,7 @@ DeviceProcessEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B22.png)
 
 Question: Identify the command used to exfiltrate the first archive?
 
@@ -1544,7 +1549,7 @@ Same as the previous query
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B23.png)
 
 Question: Identify the exfiltration service domain?
 
@@ -1640,7 +1645,7 @@ This detection identifies network connections from an administrative workstation
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B24.png)
 
 Question: Identify the exfiltration server IP address?
 
@@ -1732,7 +1737,7 @@ DeviceProcessEvents
 
 Result:
 
-[image alt]()
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B25.png)
 
 Question: What file contains the extracted master password?
 
@@ -1740,6 +1745,59 @@ Question: What file contains the extracted master password?
 KeePass-Master-Password.txt
 ```
 
+##  Recommendations
+
+### 1. Restrict Administrative Privileges and Monitor Privileged Accounts
+- Ensure that high-privilege accounts (e.g., `yuki.tanaka`) are limited and monitored.
+- Use Just-In-Time (JIT) access and session auditing to reduce risk from compromised accounts.
+
+### 2. Implement Endpoint Protection and Credential Guarding
+- Enable Microsoft Defender Credential Guard to protect LSASS memory.
+- Monitor and block known credential dumping tools (e.g., Mimikatz or renamed variants).
+
+### 3. Monitor and Control Data Staging and Exfiltration
+- Detect archive creation in unusual system directories (e.g., `.zip`, `.7z`, `.tar`, `.gz` in `C:\ProgramData\Microsoft\Crypto\staging`).
+- Monitor use of native binaries like `robocopy`, `xcopy`, `cmd.exe`, and `powershell.exe` for suspicious file copying activity.
+
+### 4. Detect and Restrict Remote Session Data Transfers
+- Monitor `curl.exe` or other HTTP/S-based uploads/downloads in remote sessions.
+- Correlate remote session IPs with known internal/external threat indicators.
+- Block or alert on connections to suspicious public file-sharing services like GoFile.
+
+### 5. Audit and Monitor Sensitive File Access
+- Track access to password managers (`KeePass`, `.kdbx`) and sensitive documents (`.txt` files) on admin workstations.
+- Alert on unusual process executions referencing these files to detect potential credential theft or data collection.
+
+##  Conclusion – CTF Challenge
+
+This Capture The Flag (CTF) challenge simulated a realistic post-compromise scenario involving:
+
+- **Credential access:** Mimikatz execution and KeePass access demonstrated how attackers target credentials to escalate privileges.
+
+- **Data collection and staging:** Text files, `.txt` outputs, and archive creation illustrated attacker data aggregation techniques.
+
+- **Exfiltration:** `curl` usage combined with public file-sharing services highlighted exfiltration over web protocols.
+
+- **Remote hands-on keyboard activity:** Remote sessions from a single IP demonstrated interactive attacker behavior.
+
+**Overall**, the challenge provided a comprehensive view of attacker behavior, emphasizing the importance of correlating process, file, and network events on privileged systems to detect and respond to malicious activity.
+
+##  Lessons Learned
+
+1. **Correlation is critical**  
+   - Single events (e.g., opening a `.txt` file) may appear benign, but combined with remote sessions, archive creation, and credential access, they reveal the attack chain.
+
+2. **LOLBins are widely abused**  
+   - Legitimate tools (`curl`, `cmd.exe`, `powershell.exe`, `robocopy`) can be weaponized for exfiltration and lateral movement.
+
+3. **Time windows matter**  
+   - Filtering by timestamp enables investigators to focus on attack windows and prioritize high-confidence indicators.
+
+4. **Privilege and context amplify risk**  
+   - Actions performed on admin workstations or by privileged users are more critical and should be closely monitored.
+
+5. **Defensive controls must be layered**  
+   - Endpoint protection, credential guarding, network monitoring, and log correlation together provide effective detection of post-compromise activity.
 
 
 
