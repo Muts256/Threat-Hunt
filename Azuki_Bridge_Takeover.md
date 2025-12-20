@@ -54,7 +54,7 @@ Result:
 
   ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B0.png)
 
-Question: Identify the source IP address for lateral movement to the admin PC?
+*Question:* Identify the source IP address for lateral movement to the admin PC?
 
 ```
 10.1.0.204
@@ -77,7 +77,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B1.png)
 
-Question: Identify the compromised account used for lateral movement?
+*Question:* Identify the compromised account used for lateral movement?
 
 ```
 yuki.tanaka
