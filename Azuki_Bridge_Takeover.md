@@ -866,6 +866,11 @@ DeviceProcessEvents
 - Supports credential compromise scoping
 - Provides insight into attacker objectives and access paths
 
+Result:
+
+![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B15a.png)
+
+
 Query 2:
 
 After establishing the Password management database software, this query was used to find the command used for enumeration
@@ -885,11 +890,6 @@ The query used:
   - Restricts activity to the user account yuki.tanaka
 
   - Outputs detailed execution context, including file metadata and full command line
-
-Result:
-
-![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B15a.png)
-
 
 Query 2:
 
