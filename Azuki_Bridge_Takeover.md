@@ -868,7 +868,7 @@ DeviceProcessEvents
 
 Query 2:
 
-After establishing the database, this query was used to find the command used for enumeration
+After establishing the Password management database software, this query was used to find the command used for enumeration
 
 The query used:
 
