@@ -149,7 +149,7 @@ DeviceNetworkEvents
 ### Detection Logic
 - Filters network events tied to a specific internal session IP
 - Focuses on an administrative endpoint
-- Detects command-line usage of `curl` to initiate external connections
+- Detects command line usage of `curl` to initiate external connections
 - Captures destination IPs and URLs for investigation
 
 ### Investigative Value
