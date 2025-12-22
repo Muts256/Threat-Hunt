@@ -7,6 +7,8 @@ COMPROMISED SYSTEMS: [ Investigation Required]
 
 EVIDENCE AVAILABLE: Microsoft Defender for Endpoint logs
 
+---
+
 # FLAG 1: LATERAL MOVEMENT - Source System
 
 Attackers pivot from initially compromised systems to high-value targets. Identifying the source of lateral movement reveals the attack's progression and helps scope the full compromise.
