@@ -1548,17 +1548,19 @@ No confirmed data exfiltration was identified. Backup and recovery capabilities 
 ### Immediate
 - Isolate affected systems.
 - Reset credentials for compromised accounts.
-- Restore systems from offline backups.
+- Restore systems from **offline or off-site backups**.
 - Re-enable and validate critical services.
 
 ### Short-Term
-- Perform a full forensic review of affected hosts.
+- Perform full forensic review of affected hosts.
 - Increase monitoring for persistence techniques.
 - Review administrative and PowerShell usage.
+- Ensure **backup integrity and off-site replication** are verified.
 
 ### Long-Term
 - Enforce MFA for administrative accounts.
 - Harden backup server access controls.
+- Implement **off-site and immutable backup storage** to prevent deletion by ransomware.
 - Conduct ransomware incident response exercises.
 
 ---
