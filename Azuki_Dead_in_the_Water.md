@@ -1563,7 +1563,7 @@ No confirmed data exfiltration was identified. Backup and recovery capabilities 
 
 ---
 
-#### Conclusion
+## Conclusion
 
 This activity represents a complete ransomware attack lifecycle, progressing from valid‑account access, through reconnaissance, persistence, backup destruction, and culminating in ransom note delivery.
 All phases are directly supported by correlated Defender telemetry across process, registry, network, and file events.
