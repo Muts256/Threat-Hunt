@@ -519,10 +519,10 @@ DeviceProcessEvents
 | project TimeGenerated, AccountName, DeviceName, FileName, ProcessCommandLine
 ```
 #### Common use
-Investigating suspected backup tampering or deletion
-Detecting destructive actions following unauthorized access
-Identifying attempts to impair recovery capabilities
-Supporting incident response for ransomware or insider threat scenarios
+  - Investigating suspected backup tampering or deletion
+  - Detecting destructive actions following unauthorized access
+  - Identifying attempts to impair recovery capabilities
+  - Supporting incident response for ransomware or insider threat scenarios
 
 #### Detection Logic
   - Filters process creation events to azuki-backupsrv.
@@ -1436,17 +1436,17 @@ DeviceFileEvents
 | project TimeGenerated, DeviceName, FileName, FolderPath, InitiatingProcessCommandLine
 ```
 ### Common use
-Detecting malware or tool deployment to disk
-Identifying attacker-created artifacts (logs, command output, exfil staging files)
-Investigating post-exploitation activity
-Tracking execution results of reconnaissance or destructive commands
+  - Detecting malware or tool deployment to disk
+  - Identifying attacker-created artifacts (logs, command output, exfil staging files)
+  - Investigating post-exploitation activity
+  - Tracking execution results of reconnaissance or destructive commands
 
 ### Detection Logic
-Filters file system events to devices containing “azuki”.
-Limits results to the investigation timeframe.
-Matches file creation events (ActionType == "FileCreated").
-Filters for file names containing SILENTLYNX or .txt, capturing both tool binaries and output files.
-Projects file path and initiating process command line for execution context.
+  - Filters file system events to devices containing “azuki”.
+  - Limits results to the investigation timeframe.
+  - Matches file creation events (ActionType == "FileCreated").
+  - Filters for file names containing SILENTLYNX or .txt, capturing both tool binaries and output files.
+  - Projects file path and initiating process command line for execution context.
 
 ### Investigative value
   - Helps identify:
@@ -1486,9 +1486,8 @@ SILENTLYNX_README.txt
 ![image alt](https://github.com/Muts256/SNC-Public/blob/845e7d8e05c7adda7e0e4c94c90fc0523665214d/Images/Azuki_Dead_inthe_Water/De01.png)
 
 
+
 ---
-
-
 
 # Azuki Environment Ransomware Incident Report
 
@@ -1560,7 +1559,7 @@ No confirmed data exfiltration was identified. Backup and recovery capabilities 
 - Isolate affected systems.
 - Reset credentials for compromised accounts.
 - Restore systems from **offline or off-site backups**.
-- Re-enable and validate critical services.
+- Re-enable and validate, starting with the least critical to the most critical services.
 
 ### Short-Term
 - Perform full forensic review of affected hosts.
@@ -1573,6 +1572,36 @@ No confirmed data exfiltration was identified. Backup and recovery capabilities 
 - Harden backup server access controls.
 - Implement **off-site and immutable backup storage** to prevent deletion by ransomware.
 - Conduct ransomware incident response exercises.
+
+---
+
+## Service Restoration Strategy
+
+Following containment and remediation, services are re-enabled using a **phased restoration approach** to minimise risk and prevent re-compromise.
+
+### Restoration Order
+1. **Low-Criticality Services**
+   - Internal utility and background services
+   - Monitoring agents (initially in passive or observe-only mode)
+   - Non-privileged scheduled jobs
+
+2. **Supporting and Dependency Services**
+   - Logging and SIEM forwarders
+   - Backup validation and restore services (read-only where possible)
+   - Authentication and configuration management services with enhanced logging
+
+3. **Critical Business Services**
+   - Production applications
+   - Customer-facing systems
+   - Identity and core infrastructure services
+
+### Risk Controls During Restoration
+- Services are enabled **in stages**, with monitoring between each phase.
+- Endpoint Detection and Response (EDR) remained in **block mode** throughout.
+- Registry persistence mechanisms, scheduled tasks, and service creation events were actively monitored.
+- Network segmentation remains in place until system stability is confirmed.
+
+This approach reduces operational risk and ensures that any remaining malicious activity would be detected before critical services are fully restored.
 
 ---
 
