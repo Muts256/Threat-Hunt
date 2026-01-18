@@ -1577,7 +1577,7 @@ No confirmed data exfiltration was identified. Backup and recovery capabilities 
 
 ## Service Restoration Strategy
 
-Following containment and remediation, services are re-enabled using a **phased restoration approach** to minimise risk and prevent re-compromise.
+Following containment and remediation, services should be re-enabled using a **phased restoration approach** to minimise risk and prevent re-compromise.
 
 ### Restoration Order
 1. **Low-Criticality Services**
