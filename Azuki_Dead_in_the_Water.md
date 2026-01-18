@@ -1477,13 +1477,24 @@ SILENTLYNX_README.txt
 
 ---
 
+## Ransomware Note:
+
+![image alt](https://github.com/Muts256/SNC-Public/blob/845e7d8e05c7adda7e0e4c94c90fc0523665214d/Images/Azuki_Dead_inthe_Water/De0.png)
+
+
+
+![image alt](https://github.com/Muts256/SNC-Public/blob/845e7d8e05c7adda7e0e4c94c90fc0523665214d/Images/Azuki_Dead_inthe_Water/De01.png)
+
+
+---
+
 
 
 # Azuki Environment Ransomware Incident Report
 
 **Date of Analysis:** January 2026  
 **Prepared by:** Security Operations
-
+**Agent Name:** Michael Musoke
 ---
 
 ## Executive Summary
