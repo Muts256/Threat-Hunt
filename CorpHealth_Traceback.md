@@ -53,8 +53,10 @@ Your task is to determine:
 - Whether the behavior represents authorized automation or misuse of a privileged account?
 
 
-
+#### Severity Indicators
 **Severity:** 🔴 Critical
+**Severity:** 🟠 Medium
+**Severity:** ⚪ Low
 
 
 
