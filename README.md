@@ -6,5 +6,6 @@ This repository illustrates hands-on CTF-style threat hunting, focusing on detec
 | [Azuki Cargo Hold](https://github.com/Muts256/Threat-Hunt/blob/main/Azuki-Cargo-Hold.md) | Suspicious lateral movement |
 | [Azuki Bridge Takeover](https://github.com/Muts256/Threat-Hunt/blob/main/Azuki_Bridge_Takeover.md) | Persistent backdoors and exfiltrating sensitive business data |
 | [Azuki Dead in the Water](https://github.com/Muts256/Threat-Hunt/blob/main/Azuki_Dead_in_the_Water.md) | Ransomware intrusion |
+| [CorpHealth Traceback](https://github.com/Muts256/Threat-Hunt/blob/main/CorpHealth_Traceback.md) | Maintenance Script Intrusion |
 
 Navigation Tip: Each hunt title is clickable and will take you directly to the detailed investigation
