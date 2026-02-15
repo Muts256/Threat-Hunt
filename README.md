@@ -23,6 +23,7 @@ Navigation Tip: Each hunt title is clickable and will take you directly to the d
 
 ### Objective
 Develop the ability to proactively detect advanced threats by analysing the system and network.
+
 Achieved by:
   - Analyzing logs, telemetry, and system artifacts.
 
