@@ -22,7 +22,7 @@ Technology used in the investigations:
 Navigation Tip: Each hunt title is clickable and will take you directly to the detailed investigation.
 
 ### Objective
-Develop the ability to proactively detect advanced threats by analysing the system and network.
+Develop the ability to proactively detect advanced threats by analysing the system and network logs.
 
 Achieved by:
   - Analysing logs, telemetry, and system artifacts.
