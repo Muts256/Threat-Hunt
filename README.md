@@ -19,4 +19,4 @@ Technology used in the investigations:
 | [Azuki Dead in the Water](https://github.com/Muts256/Threat-Hunt/blob/main/Azuki_Dead_in_the_Water.md) | Ransomware intrusion |
 | [CorpHealth Traceback](https://github.com/Muts256/Threat-Hunt/blob/main/CorpHealth_Traceback.md) | Maintenance Script Intrusion |
 
-Navigation Tip: Each hunt title is clickable and will take you directly to the detailed investigation
+Navigation Tip: Each hunt title is clickable and will take you directly to the detailed investigation.
