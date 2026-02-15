@@ -20,3 +20,17 @@ Technology used in the investigations:
 | [CorpHealth Traceback](https://github.com/Muts256/Threat-Hunt/blob/main/CorpHealth_Traceback.md) | Maintenance Script Intrusion |
 
 Navigation Tip: Each hunt title is clickable and will take you directly to the detailed investigation.
+
+### Objective
+Develop the ability to proactively detect advanced threats by analysing the system and network.
+Achieved by:
+  - Analyzing logs, telemetry, and system artifacts.
+
+  - Identifying abnormal patterns (e.g., beaconing, lateral movement, persistence).
+
+  - Forming and testing hypotheses (e.g., “Is this C2 traffic?”).
+
+  - Using tools like SIEM, EDR, packet captures, and scripts.
+
+  - Mapping findings to MITRE ATT&CK.
+  - Documenting reports.
