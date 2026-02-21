@@ -78,6 +78,9 @@ DeviceInfo
 | project TimeGenerated, DeviceName, PublicIP, OSDistribution
 
 ````
+Result 
+[image alt!](1)
+
 Query 
 ````
 DeviceInfo
@@ -87,7 +90,12 @@ DeviceInfo
 | project TimeGenerated, DeviceName, PublicIP, OSDistribution
 
 ````
+[image alt!](1a)
 
+*Question: Device Name*
+```
+ch-ops-wks02
+```
 
 #### Severity Indicators
 **Severity:** 🔴 Critical
