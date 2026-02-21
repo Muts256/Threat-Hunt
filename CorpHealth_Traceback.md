@@ -53,6 +53,42 @@ Your task is to determine:
 - Whether the behavior represents authorized automation or misuse of a privileged account?
 
 
+
+
+
+
+
+### Flag 0: Identify the device
+
+Your first step is confirming which workstation generated the unusual telemetry.
+Initial log clustering shows that all suspicious events originated from a single endpoint active during an off-hours window in the middle of November.  
+During your initial sweep, look for a workstation that shows:
+
+A small cluster of events during an unusual maintenance window 
+
+Activity between Mid November to Early December.
+
+Multiple entries with sources tied to Process Events, Network Events, File Events, and Script-based operations
+
+Query Used
+````
+DeviceInfo
+| where TimeGenerated  between (datetime(2025-11-15) .. datetime(2025-12-05))
+| where DeviceName matches regex @"(?i)^[a-z]{2}-"
+| project TimeGenerated, DeviceName, PublicIP, OSDistribution
+
+````
+Query 
+````
+DeviceInfo
+| where TimeGenerated  between (datetime(2025-11-15) .. datetime(2025-12-05))
+| where DeviceName matches regex @"(?i)^[a-z]{2}-"
+| where DeviceName startswith "c"
+| project TimeGenerated, DeviceName, PublicIP, OSDistribution
+
+````
+
+
 #### Severity Indicators
 **Severity:** 🔴 Critical
 **Severity:** 🟠 Medium
