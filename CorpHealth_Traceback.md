@@ -52,7 +52,7 @@ Your task is to determine:
 - How the activity progressed across different stages?
 - Whether the behavior represents authorized automation or misuse of a privileged account?
 
-
+---
 
 
 
@@ -79,7 +79,7 @@ DeviceInfo
 
 ````
 Result 
-[image alt!](1)
+![image alt](1)
 
 Query 
 ````
@@ -90,7 +90,8 @@ DeviceInfo
 | project TimeGenerated, DeviceName, PublicIP, OSDistribution
 
 ````
-[image alt!](1a)
+Result
+![image alt](1a)
 
 *Question: Device Name*
 ```
