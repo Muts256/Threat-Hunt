@@ -93,7 +93,7 @@ DeviceInfo
 Result
 ![image alt](1a)
 
-*Question: What is the compromised Device Name*
+*Question: What is the compromised Device Name?*
 ```
 ch-ops-wks02
 ```
