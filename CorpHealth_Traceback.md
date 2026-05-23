@@ -43,7 +43,7 @@ You are taking over as the lead analyst assigned to review historical telemetry 
   - Azure diagnostic and device logs
   - Supporting endpoint event artifacts 
 
-You will not have live access to the machine — only its recorded activity.
+You will not have live access to the machine, only its recorded activity.
 
 Your task is to determine: 
 
